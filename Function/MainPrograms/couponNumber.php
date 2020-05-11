@@ -12,7 +12,7 @@
 * @version : 7.2.14
 * @Since : 06-05-2020
 *********************************************************************/
-include "C:\Users\pc\Function\Functional\Utility\Utility.php";
+include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
 echo "Enter coupoun numbers you want: ";
 $number=readline();
 Utility::couponNumber($number);

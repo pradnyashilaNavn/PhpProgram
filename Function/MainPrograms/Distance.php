@@ -17,3 +17,4 @@ $x = Utility::getInt();
 echo "Enter y value"."\n";
 $y = Utility::getInt();
 echo "distance ".Utility::distance($x ,$y)."\n";
+?>

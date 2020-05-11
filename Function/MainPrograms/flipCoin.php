@@ -10,8 +10,8 @@
 * @version : 7.2.14
 * @Since : 06-05-2020
 *********************************************************************/
-    include "C:\Users\pc\PHP\Function\Utility\Utility.php";
-    echo "Enter number  : ";
-    $number= Utility::getInt(); 
-    Utility::flipCoin($number);
+include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
+echo "Enter number  : ";
+$number= Utility::getInt(); 
+Utility::flipCoin($number);
 ?>

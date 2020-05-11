@@ -14,16 +14,16 @@
 * @version : 7.2.14
 * @Since : 06-05-2020
 *********************************************************************/
-    include "C:\Users\pc\Function\Functional\Utility\Utility.php";
-    echo "Enter stake value: "."\n";
-    $stake= Utility::getInt();
-    echo "\n"."Enter goal value: "."\n";
-    $goal= Utility::getInt();
-    while ($goal < $stake) {
-    echo "Enter goal value bigger then stack\n";
-    $goal= Utility::getInt();
-    }
-    echo "\n"."enter number of times"."\n";
-    $number = Utility::getInt();
-    Utility::gambler($stake,$goal,$number);
+include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
+echo "Enter stake value: "."\n";
+$stake= Utility::getInt();
+echo "\n"."Enter goal value: "."\n";
+$goal= Utility::getInt();
+while ($goal < $stake) {
+echo "Enter goal value bigger then stack\n";
+$goal= Utility::getInt();
+}
+echo "\n"."enter number of times"."\n";
+$number = Utility::getInt();
+Utility::gambler($stake,$goal,$number);
 ?>
