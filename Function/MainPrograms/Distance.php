@@ -11,7 +11,7 @@
 * @Version : 7.2.14
 * @Since : 06-05-2020
 *********************************************************************/
-include "C:\Users\pc\Function\Functional\Utility\Utility.php"; 
+include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
 echo "Enter x value"."\n";
 $x = Utility::getInt();
 echo "Enter y value"."\n";
