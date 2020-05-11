@@ -48,5 +48,14 @@ class Utility{
             echo $num."\n";
         }
     }
+    /*
+    *@Description : Finding distance from the origin.
+    *$Parameter : Read the input x and y from user.
+    *@Return : return distance values using following formulas
+    */
+    static function distance($x,$y)
+    {
+        return sqrt(($x*$x) +($y*$y));
+    }
 
 }
