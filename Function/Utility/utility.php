@@ -78,6 +78,32 @@ class Utility{
          echo ($tail/$number)*100;
          echo "% Tails"."\n";
     }
- 
-
+     /*
+    *@Description : Find a number of Wins and Percentage of Win and Loss. 
+    *$Parameter : Reads the inputs integer number,goal,stake from user.
+    *@Return : Percentage of win and average number of bets.
+    */
+    static function gambler($stake,$goal,$n)
+    {    
+        $win = 0;
+        $bet = 0;
+        for($i = 0;$i < $n; $i++)
+        {
+            $cash = $stake;
+            while($cash != $goal && $cash != 0)
+            {
+                $bet++;
+                if ((random_int(0,1))==1) 
+                    $cash++;
+                else 
+                    $cash--;        
+             }
+             if($cash == $goal)
+                $win++;
+        }
+        echo "no of win ".$win."\n";
+        echo "bet ".$bet."\n";
+        echo "Percentage of win: ".(($win/$n)*100)."%"."\n";
+        echo "Average number of bet: ".((($n-$win)/$n)*100)."%"."\n";
+    }
 }
