@@ -57,5 +57,27 @@ class Utility{
     {
         return sqrt(($x*$x) +($y*$y));
     }
+    /*
+    *@Description : Finding Percentage of Head vs Tails.
+    *$Parameter : Reads the integer from user
+    *@Return :  Percentage of Head vs Tails.
+    */
+    static function flipCoin($number)
+    {    
+         $head=0;
+         $tail=0;
+         for($i=0;$i<$number;$i++)
+         {
+             if (random_int(0,1)==1) 
+                 $tail++;
+             else 
+                 $head++;
+         }
+         echo ($head/$number)*100;
+         echo "% Heads"."\n";
+         echo ($tail/$number)*100;
+         echo "% Tails"."\n";
+    }
+ 
 
 }
