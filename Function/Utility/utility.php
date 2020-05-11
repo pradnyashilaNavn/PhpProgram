@@ -106,4 +106,18 @@ class Utility{
         echo "Percentage of win: ".(($win/$n)*100)."%"."\n";
         echo "Average number of bet: ".((($n-$win)/$n)*100)."%"."\n";
     }
+    /*
+    *@Description : Finding harmonic number upto N.
+    *$Parameter : Reads the integer from user
+    *@Return : sum is use to save the total sum of n value 
+    */
+    static function harmonicNumber($number)
+    {  
+         $sum = 0;
+         for($i = 1; $i <= $number; $i++)
+         {
+             $sum += 1/$i;
+         }
+         echo $sum."\n";
+    }
 }
