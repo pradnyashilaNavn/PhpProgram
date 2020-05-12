@@ -11,7 +11,7 @@
 * @version : 7.2.14cd
 * @Since : 10-05-2020
 *********************************************************************/
-include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
+include "C:/Users/pc/PHP/functional and algorithms/Function/Utility/utility.php"; 
     class TicTacToe{
         /**
          * tic tak toe board where by default all value are zero and by default
@@ -26,62 +26,22 @@ include "C:\Users\pc\PHP\Function\Utility\utility.php";
          */
         public function checkUserWinner($arr)
         {
-            //boolean value by default false
-            $b = false;
-            if ($arr[0][0] == 1 && $arr[0][1] == 1 && $arr[0][2] == 1) {
-                $b = true;
-            }
-            if ($arr[1][0] == 1 && $arr[1][1] == 1 && $arr[1][2] == 1) {
-                $b = true;
-            }
-            if ($arr[2][0] == 1 && $arr[2][1] == 1 && $arr[2][2] == 1) {
-                $b = true;
-            }
-            if ($arr[0][0] == 1 && $arr[1][0] == 1 && $arr[2][0] == 1) {
-                $$b = true;
-            }
-            if ($arr[0][1] == 1 && $arr[1][1] == 1 && $arr[2][1] == 1) {
-                $b = true;
-            }
-            if ($arr[0][2] == 1 && $arr[1][2] == 1 && $arr[2][2] == 1) {
-                $b = true;
-            }
-            if ($arr[0][0] == 1 && $arr[1][1] == 1 && $arr[2][2] == 1) {
-                $b = true;
-            }
-            if ($arr[0][2] == 1 && $arr[1][1] == 1 && $arr[2][0] == 1) {
-                $b = true;
-            }
-            return $b;
+            //boolean value by default fale
+            if ($arr[0][0] == 1 && $arr[0][1] == 1 && $arr[0][2] == 1 || $arr[1][0] == 1 && $arr[1][1] == 1 && $arr[1][2] == 1
+            || $arr[2][0] == 1 && $arr[2][1] == 1 && $arr[2][2] == 1 || $arr[0][0] == 1 && $arr[1][0] == 1 && $arr[2][0] == 1
+            ||$arr[0][1] == 1 && $arr[1][1] == 1 && $arr[2][1] == 1 || $arr[0][2] == 1 && $arr[1][2] == 1 && $arr[2][2] == 1
+            || $arr[0][0] == 1 && $arr[1][1] == 1 && $arr[2][2] == 1  ||$arr[0][2] == 1 && $arr[1][1] == 1 && $arr[2][0] == 1 ) 
+                return true;
+            
         }
         public function checkcomputerWinner($arr)
         {            
             $b = false;
-            if ($arr[0][0] == 2 && $arr[0][1] == 2 && $arr[0][2] == 2) {
-                $b = true;
-            }
-            if ($arr[1][0] == 2 && $arr[1][1] == 2 && $arr[1][2] == 2) {
-                $b = true;
-            }
-            if ($arr[2][0] == 2 && $arr[2][1] == 2 && $arr[2][2] == 2) {
-                $b = true;
-            }
-            if ($arr[0][0] == 2 && $arr[1][0] == 2 && $arr[2][0] == 2) {
-                $b = true;
-            }
-            if ($arr[0][1] == 2 && $arr[1][1] == 2 && $arr[2][1] == 2) {
-                $b = true;
-            }
-            if ($arr[0][2] == 2 && $arr[1][2] == 2 && $arr[2][2] == 2) {
-                $b = true;
-            }
-            if ($arr[0][0] == 2 && $arr[1][1] == 2 && $arr[2][2] == 2) {
-                $b = true;
-            }
-            if ($arr[0][2] == 2 && $arr[1][1] == 2 && $arr[2][0] == 2) {
-                $b = true;
-            }
-            return $b;
+            if ($arr[0][0] == 2 && $arr[0][1] == 2 && $arr[0][2] == 2 ||$arr[1][0] == 2 && $arr[1][1] == 2 && $arr[1][2] == 2
+            || $arr[2][0] == 2 && $arr[2][1] == 2 && $arr[2][2] == 2 || $arr[0][0] == 2 && $arr[1][0] == 2 && $arr[2][0] == 2 
+            || $arr[0][1] == 2 && $arr[1][1] == 2 && $arr[2][1] == 2 || $arr[0][2] == 2 && $arr[1][2] == 2 && $arr[2][2] == 2 
+            || $arr[0][0] == 2 && $arr[1][1] == 2 && $arr[2][2] == 2 || $arr[0][2] == 2 && $arr[1][1] == 2 && $arr[2][0] == 2) 
+            return true;
         }
 
         /**
@@ -161,11 +121,11 @@ include "C:\Users\pc\PHP\Function\Utility\utility.php";
                     echo "User win "."\n";
                     break;
                 }
-                if (TicTacToe::checkcomputerWinner(TicTacToe::$game)) {
+               else if (TicTacToe::checkcomputerWinner(TicTacToe::$game)) {
                     echo "Computer win"."\n";
                     break;
                 }
-                if($i == 9)
+                else if ($i == 9)
                     echo " Game Draw"."\n";
             }
         }

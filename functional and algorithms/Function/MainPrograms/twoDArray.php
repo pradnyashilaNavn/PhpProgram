@@ -17,7 +17,7 @@ standard input.
 *$parameter : reads the input row and col  from user
 @return : 2D Arrays values
 */
-    include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
+include "C:/Users/pc/PHP/functional and algorithms/Function/Utility/utility.php"; 
     function  twoDArray()
      {
          echo "enter row size"."\n";

@@ -10,7 +10,7 @@
 * @version : 7.2.14
 * @Since : 06-05-2020
 *********************************************************************/
-include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
+include "C:/Users/pc/PHP/functional and algorithms/Function/Utility/utility.php"; 
 echo "enter value to find harmonic number"."\n";
 $number= Utility::getInt(); 
 Utility::harmonicNumber($number);

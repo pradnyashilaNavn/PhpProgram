@@ -11,7 +11,7 @@
 * @version : 7.2.14cd
 * @Since : 06-05-2020
 *********************************************************************/
-include "C:\Users\pc\Function\Functional\Utility\Utility.php";
+include "C:/Users/pc/PHP/functional and algorithms/Function/Utility/utility.php"; 
 echo "Enter Name :";
 $input = readline("Enter Name : ");
 Utility::replaceF($input);

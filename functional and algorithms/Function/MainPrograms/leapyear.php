@@ -10,8 +10,8 @@
 * @version : 7.2.14
 * @Since : 06-05-2020
 *********************************************************************/
-include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
-include "C:\Users\pc\PHP\Function\BusinessLogic\businesslogic.php";
+include "C:/Users/pc/PHP/functional and algorithms/Function/Utility/utility.php"; 
+include "C:/Users/pc/PHP/functional and algorithms/Function/BusinessLogic/businesslogic.php";
 echo "Enter year"."\n";
 $year= Utility::getInt();
 BusinessLogic::leapYear($year);

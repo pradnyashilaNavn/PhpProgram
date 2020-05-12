@@ -14,7 +14,7 @@
 * @version : 7.2.14
 * @Since : 06-05-2020
 *********************************************************************/
-include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
+include "C:/Users/pc/PHP/functional and algorithms/Function/Utility/utility.php"; 
 echo "Enter stake value: "."\n";
 $stake= Utility::getInt();
 echo "\n"."Enter goal value: "."\n";
