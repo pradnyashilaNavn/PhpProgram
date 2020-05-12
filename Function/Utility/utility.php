@@ -205,4 +205,14 @@ class Utility{
         }
  
        }
+           /*
+    *@description : Using math formula find windChill Calculation 
+    *$parameter : Reads the input temperature and speed from user. 
+    *@return : windChill Calculation.
+    */
+    public static function windChill($t,$v)
+    {
+        $w=35.74+(0.6215*$t)+(((0.4275*$t)- 35.75)*($v*0.16));
+        echo $w,"\n";
+    }
 }
