@@ -141,4 +141,38 @@ class Utility{
             Utility::powerOfTwo();
         }  
     }
+        /**
+        * function factor is to find the all prime factors of any number 
+        * and print the values 
+        * @param : $number to get prime factor of number 
+        * @return : all prime factors.
+        */  
+        static function primeFactors($number)
+        {    
+            $arr = array();
+            $i = 2;
+            $index = 0;
+            while($number != 1)
+            {
+                $boolean = true;
+                //for loop to get prime number one by one
+                for($j = 2; $j < $i/2; $j++)
+                {
+                    if($i % $j == 0)
+                        $boolean = false;
+                        break;
+                }
+            }
+                //if number is prime then is will check how many time that prime number 
+                //is deided by number.
+                if($boolean)
+                {
+                    while($number % $i == 0)
+                    {
+                        $arr[$index++] = $i;
+                        $number = $number / $i;
+                    }
+                }
+                 $i++;
+            }
 }
