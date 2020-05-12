@@ -120,4 +120,25 @@ class Utility{
          }
          echo $sum."\n";
     }
+    /*
+    *@Description : Power of two 
+    *$Parameter : Reads the input integer from user
+    *@return : all power of two values.
+    */
+    static function powerOfTwo($number)
+    {   
+        if ($number >= 0 && $number < 31) {
+            $power = 2**$number;
+            $all = 0; $count = 1;
+            while($all != $power)
+            {
+                $all = 2** $count;
+                echo $all."\n";
+                 $count++;
+            }
+        } else {
+            echo "enter value between 0 to 31"."\n";
+            Utility::powerOfTwo();
+        }  
+    }
 }
