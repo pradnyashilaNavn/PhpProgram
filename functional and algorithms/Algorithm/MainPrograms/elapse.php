@@ -10,8 +10,7 @@
 * @version : 7.2.14
 * @Since : 07-05-2020
 *********************************************************************/
-include "C:\Users\pc\Function\Algorithm\Utility\utility.php";
-
+include "C:/Users/pc/PHP/functional and algorithms/Algorithm/Utility/utility.php";
 $intArray=BusinessLogic::intArray();
 $stringArray=BusinessLogic::stringArray();
 echo "\n";

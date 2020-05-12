@@ -1,18 +1,18 @@
 <?php
 /********************************************************************
-* @Execution : Algorithm/MainPrograms $ php anagram.php
-* @Description :Take 2 Strings as Input such abcd and dcba and Check for Anagrams.
-* @Purpose : The Two Strings are Anagram or not...
+* @Execution : Algorithm/MainPrograms $ php sqrt.php
+* @Description : Write a static function sqrt to compute the square root of a nonnegative number c
+    given in the input using Newton's method.
+* @Purpose : newton's method.
 * @Function : Utility/utility
-* @File : anagram.php
+* @File : sqrt.php
 * @Author : Pradnyashila Jadhav 
 * <pradnyajadhav995@gmail.com>
 * @version : 7.2.14
 * @Since : 07-05-2020
 *********************************************************************/
 include "C:/Users/pc/PHP/functional and algorithms/Algorithm/Utility/utility.php";
-echo "\nEnter a string1: ";
-$input1=Utility::stringInput();
-echo "Enter a string2: ";
-$input2=Utility::stringInput();
-Utility::Anagram($input1,$input2);
+echo "Enter the number: ";
+$number=readline();
+Utility::sqrt($number);
+?>

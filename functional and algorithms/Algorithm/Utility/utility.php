@@ -1,5 +1,5 @@
 <?php 
-include "C:\Users\pc\PHP\Algorithm\BusinessLogic\businesslogic.php";
+include "C:/Users/pc/PHP/unctional and algorithms/Algorithm/BusinessLogic/businesslogic.php";
 class Utility{
     //USER INPUT METHODS
     public static function numericInput()
@@ -18,7 +18,6 @@ class Utility{
             echo "Exception : " . $e->getMessage(). "\n". "on line" . $e->getLine() . "\n";
         }
     }
-
     public static function stringInput(){
         try{
             fscanf(STDIN, "%s\n", $string);
@@ -142,6 +141,27 @@ class Utility{
                  $array[$j] = $t; 
                 } 
             }
+        }
+        for($i=0;$i<count($array);$i++){
+            echo $array[$i]," ";
+        }
+    }
+    /*
+    *@description : sorting the set of words using InsertionSort 
+    *$parameter : reads the input words of an array from the user  
+    *@Return : Return sorted words.
+    */
+    public static function insertionSort($array)
+    {
+        for($i=1;$i<count($array);$i++){
+			$temp=$array[$i];
+            $j=$i-1;
+            // Using while loop compair values
+			while($j>=0 && $array[$j] > $temp){
+				$array[$j+1]=$array[$j];
+				$j=$j-1;
+			}
+			$array[$j+1]=$temp;
         }
         for($i=0;$i<count($array);$i++){
             echo $array[$i]," ";
