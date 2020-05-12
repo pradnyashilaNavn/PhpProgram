@@ -189,4 +189,20 @@ class Utility{
         echo "value of root1 : ", $real1;
         echo "\nvalue of root2 : ", $real2;
     }
+    /*
+    *@description : replacing the name in the string 
+    *$return : UserName replacing with String.  
+    */
+    static function replaceF($string)
+       {
+        if(strlen($string) > 2)
+        {
+            $replaceString = "Hello <<UserName>>, How are you?";
+            echo str_replace("<<UserName>>", $string , $replaceString)."\n";
+            }
+            else {
+            echo "Invalid username";
+        }
+ 
+       }
 }

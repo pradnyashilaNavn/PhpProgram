@@ -12,10 +12,10 @@
 *********************************************************************/
 include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
 echo "enter a value: ";
-$a= Utility::getInt();
+$a=Utility::getInt();
 echo "\nenter b value: ";
-$b= Utility::getInt();
+$b=Utility::getInt();
 echo "\nenter c vale: ";
-$c= Utility::getInt();
+$c=Utility::getInt();
 Utility::quadratic($a,$b,$c);
 ?>
