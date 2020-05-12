@@ -262,4 +262,89 @@ class Utility{
         echo $day,"  "; 
         BusinessLogic::day($day);
     } 
+    /*
+    *@description : vending Machine  
+    *$parameter : reads the input amount and notes from the user  
+    */
+    public static function vendingMachine($array,$amount)
+    {
+        $notes=array();
+        $money=$amount;
+        $count=0;
+        $c=0;
+        for($i=count($array)-1;$i>=0;$i--){
+            if($array[$i] <=$money ){
+                $count=$count+floor($money/$array[$i]);
+                echo $array[$i],"----",floor($money/$array[$i]);
+                echo "\n";
+                $money=$money%$array[$i];
+                $notes[$c]=$array[$i];
+                $c++;
+            }
+        }
+         echo "the minimum number of notes are : ",$count,"\n";
+    }
+    /*
+    *@description : guess game using binary search     
+    *$parameter : reads the number and search number from the user  
+    */
+    public static function guessNumber($number,$search)
+    {
+        $start=0;
+        $value=pow(2,$number);
+        $end=$value;
+        $mid=floor($start+$end)/2;
+        $bool=true;
+        while($bool){
+            echo "enter 1 if =$mid\nenter 2 if <$mid\nenter 3 if >$mid\n";
+            $user=readline();
+            if($user==1){
+                echo "your number is: $mid\n";
+                $bool=false;
+                break;
+            }
+            else if($user==2)
+                $mid=floor($mid)/2;
+            else if($user==3)
+                $mid=floor($mid+$end)/2;
+        } 
+    }
+    /*
+    *@description : compute the square root of a nonnegative number c given in the input using Newton's method.
+    *$parameter : reads the value  from the user 
+    *@return : return square root values using following formulas. 
+    */
+    public static function sqrt($c)
+    {
+        $t=$c;
+        $epsilon=1e-15;
+        while(abs($t-$c/$t) > $epsilon*$t)
+        $t=(($c/$t)+$t)/2;
+        echo "$t\n";
+    }
+
+    /*
+    *@description : calculating the monthly intrest payment on principle amount    
+    *$parameter : reads the year, principal and rate of intrest from the user  
+    *@return : return total Payment.
+    */
+    public static function monthlyPayment($principal, $rate, $year)
+    {
+        $r = $rate / (12 * 100);
+        $n = 12 * $year;
+        $total = (($principal * $r) / (1 - pow((1 + $r), (-$n))));
+        echo "total : $total";
+    }
+     /*
+    *@description : Add temperaturConversion static function.    
+    *$parameter : reads the celsius, fahrenheit from the user  
+    *@Return : Converting celsius to fahrenheit and vise versa using following formulas.
+    */
+    public static function temperatureConv($celsius,$fahrenheit) 
+    {
+        $fah=($celsius * 9/5) + 32 ;
+        $cel=($fahrenheit - 32) * 5/9;
+        echo "Celsius to Fahrenheit: $fah\n";
+        echo "Fahrenheit to Celsius: $cel\n";
+    }
 }

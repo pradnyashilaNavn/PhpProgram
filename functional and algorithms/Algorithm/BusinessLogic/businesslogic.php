@@ -38,4 +38,54 @@ class BusinessLogic{
         }
         return $String1;
     }
+       /*
+    *@description : finding the day of the week   
+    *$parameter : reads the day from the dayOfWeek($year,$month,$date) function 
+    @Return : return days. 
+    */
+    public static function day($day)
+    {
+        switch($day)
+        {
+            case 1: echo "Sunday\n";
+                break;
+            case 2: echo "Monday\n";
+                break;
+            case 3: echo "Tuesday\n";
+                break;
+            case 4: echo "Wendsday\n";
+                break;
+            case 5: echo "Thursday\n";
+                break;
+            case 6: echo "Friday\n";
+                break;
+            case 0: echo "Saterday\n";
+                break;
+        }
+    }
+    /*
+    *@description : this function purpose is only for integer values   
+    */
+    public static function intArray()
+    {
+        echo "enter the int array size: ";
+        $intSize=readline();
+        $intArray=array();
+        for($i=0;$i<$intSize;$i++)
+        $intArray[$i]=readline();
+        return $intArray;
+    }
+    /*
+    *@description : this function purpose is only for string values   
+    */
+    public static function stringArray()
+    {
+        echo "enter the size of string array: ";
+        $stringSize=readline();
+        $stringArray=array();
+        for($i=0;$i<$stringSize;$i++)
+        $stringArray[$i]=readline();
+    return $stringArray;
+    }
+}
 }
