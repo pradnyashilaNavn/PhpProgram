@@ -127,4 +127,24 @@ class Utility{
         echo $array[$i]," ";
         echo "\n";
     }
+    /*
+    *@description : Sorting the set of words using BubbleSort 
+    *$parameter : Reads the input words of an array from the user  
+    *@Return : Return sorted words.
+    */
+    public static function bubbleSort($array)
+    {
+        for($i=0;$i<count($array)-1;$i++){
+           for($j=$i+1;$j<count($array);$j++){
+                if ($array[$i] > $array[$j]){ 
+                 $t = $array[$i]; 
+                 $array[$i] = $array[$j]; 
+                 $array[$j] = $t; 
+                } 
+            }
+        }
+        for($i=0;$i<count($array);$i++){
+            echo $array[$i]," ";
+        }
+    }
 }
