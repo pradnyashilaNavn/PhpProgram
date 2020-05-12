@@ -183,4 +183,50 @@ class Utility{
        
     return false;// words does not exist
     }
+        /*
+    *@description : converting decimal value to binary value    
+    *$parameter : reads the decimal value  from the user  
+    *@return : returns the array which consists of binary value in reverse order
+    */
+    public static function decmalToBinary($decimal)
+    {
+        $binary=array();
+        $c=0;
+        $dup=$decimal;
+        while($dup != 0){
+            $val=$dup%2;
+            $binary[$c]=$val;
+            $c++;
+            $dup=floor($dup/2);
+        }
+        for($i=count($binary)-1;$i>=0;$i--)
+            echo $binary[$i];
+        echo "\n";
+        return $binary;
+    }
+    /*
+    *@description : converting decimal value to binary value    
+    *$parameter : reads the decimal value  from the user  
+    *@return : return the decimal value after operation of swaping nibbles and converting into binary
+    */
+    public static function binaryNibbles($binary)
+    {
+        for($i=count($binary);$i<8;$i++)//adding 0 for starting when the length of the number is below 8
+              $binary[$i]=0;
+        for($i=count($binary)-1;$i>=0;$i--)//swaping the two halfs of the number
+        echo $binary[$i];
+        echo "\n";
+        for($i=0;$i<4;$i++){
+            $t=4+$i;
+            $temp=$binary[$i];
+            $binary[$i]=$binary[$t];
+            $binary[$t]=$temp;
+        }
+        echo "\n";
+        $t=0;
+        for($i=count($binary)-1;$i>=1;$i--)//converting binary to decimal
+            $t=($t+$binary[$i])*2;
+        echo $t,"\n";
+        return $t;
+    }
 }
