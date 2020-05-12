@@ -229,4 +229,17 @@ class Utility{
         echo $t,"\n";
         return $t;
     }
+    /*@description : Finding the day of the week   
+    *$parameter : Reads the year, month and date from the user 
+    *@Return : Return days using following formulas.
+    */
+    public static function dayOfWeek($year,$month,$date)
+    {
+        $y=$year- (14-$month)/12;
+		$x=$y+$y/4-$y/100+$y/400;
+		$m=$month+12*((14-$month)/12)-2;
+        $day=($date+$x+31*$m/12)% 7;
+        echo $day,"  "; 
+        BusinessLogic::day($day);
+    } 
 }
