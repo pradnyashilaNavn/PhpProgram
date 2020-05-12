@@ -147,4 +147,40 @@ class Utility{
             echo $array[$i]," ";
         }
     }
+    /*
+    *@description : reads the words from the file
+    *$return : returns the arranged words in array  
+    */
+    public static function readWords()
+    {
+        $file= "C:/Users/pc/PHP/Algorithm/files.txt";
+        $open=fopen($file,"r") or die("can't open the file");
+        $word=fread($open,filesize($file));
+        fclose($open);
+        return $word;
+    }
+     /*
+    *@description : searching the word from  in array 
+    *$parameter : reads the input word and array from the user
+    *$return : returns {boolean}  
+    */
+    public static function binarySearch($array,$word)
+    {
+        if(count($array)==0)//if array does not has elements
+        return false;
+        $size=count($array);
+        $mid;$low=0;
+        $last=$size-1;
+            while($low<=$last){
+                $mid=floor(($low+$last)/2);
+                if($word==$array[$mid])//if middle elements matches the words
+                    return true;
+                if($word < $array[$mid])
+                    $last=$mid-1;//search element in left side
+                else
+                    $low=$mid+1;//search element in right side
+             }
+       
+    return false;// words does not exist
+    }
 }
