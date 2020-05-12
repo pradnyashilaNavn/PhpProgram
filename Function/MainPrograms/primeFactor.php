@@ -1,3 +1,4 @@
+#! /c/xampp/php/php
 <?php
 /********************************************************************
 * @Execution : Functional/MainPrograms $ php primeFactors.php
@@ -12,6 +13,6 @@
 *********************************************************************/
 include "C:\Users\pc\PHP\Function\Utility\utility.php"; 
 echo "Enter a number: ";
-$number= Utility::getInt();
-Utility::primeFactors($number)
+$number=Utility::getInt();
+Utility::primeFactors($number);
 ?>

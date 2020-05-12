@@ -175,4 +175,18 @@ class Utility{
                 }
                  $i++;
             }
+     /*
+    *@description : Finding the roots in quadratic equation
+    *$parameter : Reads the input a, b and c from user 
+    */
+    public static function quadratic($a,$b,$c)
+    {
+        $delta = abs((($b*$b) - (4*$a*$c)));
+        $delta=sqrt($delta);
+        echo $delta,"\n";
+        $real1=(-$b+ sqrt($delta))/(2*$a);
+        $real2=(-$b- sqrt($delta))/(2*$a);
+        echo "value of root1 : ", $real1;
+        echo "\nvalue of root2 : ", $real2;
+    }
 }
