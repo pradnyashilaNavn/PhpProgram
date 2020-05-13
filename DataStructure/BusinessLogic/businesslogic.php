@@ -27,7 +27,6 @@ class BusinessLogic
         } else {
             while ($temp->data < $data) {
                 if ($temp->data < $data && $temp->next == null || $temp->data < $data && $temp->next->data > $data) {
-                    $temp2=$temp;
                     $temp2 = $temp->next;
                     $temp->next = $newNode;
                     $newNode->next = $temp2;
