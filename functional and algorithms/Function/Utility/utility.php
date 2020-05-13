@@ -138,7 +138,7 @@ class Utility{
             }
         } else {
             echo "enter value between 0 to 31"."\n";
-            Utility::powerOfTwo();
+            Utility::powerOfTwo($number);
         }  
     }
         /**
