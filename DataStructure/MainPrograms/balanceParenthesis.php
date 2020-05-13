@@ -27,3 +27,10 @@ for($i=0;$i<strlen($exp);$i++){
         break;
     }
 }
+$obj->peek();
+$boolis=$obj->isEmpty();
+if($boolis && $bool)
+    echo "expresssion balanced\n";
+else 
+    echo "expresssion not balanced\n";
+    ?>

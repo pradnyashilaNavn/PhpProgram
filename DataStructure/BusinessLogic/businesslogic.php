@@ -87,6 +87,10 @@ class BusinessLogic
         }
         echo "\n\n";
     }
+    /*
+    *@description : creating a new node and linking to next Linked List using stack pushing 
+     @return : Arithmetic Expression is balanced or not.
+    */
     function push($data)
     {
         $newNode = new ListNode($data); 
@@ -103,6 +107,11 @@ class BusinessLogic
             }
         }   
     }
+
+    /*
+    *@description : poping the data which is last in the linked list
+    *@parameter : parameter is data 
+    */ 
     function pop($data)
     {
         if(BusinessLogic::isEmpty() == false){
@@ -124,6 +133,9 @@ class BusinessLogic
         }
     else return false;
     }
+    /*
+    *@description : displays the peek of the data in stack 
+    */ 
     function peek()
     {
         if($this->firstNode==null){
@@ -138,19 +150,15 @@ class BusinessLogic
             return true;
         }
     }
+
+     /*
+    *@description : checks the stack is empty oir not
+    *@return : returns the boolean 
+    */ 
     function isEmpty()
     {
         if($this->firstNode==null)
         return true;
         else return false;
-    }
-    function show()
-    {
-        $temp=$this->firstNode;
-        while($temp != null){
-            echo $temp->data," ";
-            $temp=$temp->next;
-        }
-        echo "\n\n";
     }
 }
