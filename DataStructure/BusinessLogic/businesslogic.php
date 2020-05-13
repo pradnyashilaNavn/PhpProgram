@@ -87,4 +87,70 @@ class BusinessLogic
         }
         echo "\n\n";
     }
+    function push($data)
+    {
+        $newNode = new ListNode($data); 
+        if($this->firstNode==null)
+            $this->firstNode=&$newNode;
+        else{
+            $temp=$this->firstNode;
+            while($temp != null){
+                if($temp->next==null){
+                    $temp->next=&$newNode;
+                break;
+                }
+                $temp=$temp->next;
+            }
+        }   
+    }
+    function pop($data)
+    {
+        if(BusinessLogic::isEmpty() == false){
+            $temp=$this->firstNode;
+            $temp2=$temp;
+            if($temp->next==null){
+                $this->firstNode=null;
+            }
+            else{    
+                while($temp->next != null){
+                    $temp2=$temp;
+                    $temp=$temp->next;
+                }
+                if($temp->data == '(' && $data == ')'){
+                    $temp2->next=null;
+                }
+            }
+            return true;
+        }
+    else return false;
+    }
+    function peek()
+    {
+        if($this->firstNode==null){
+        return false;
+        }
+        else{
+            $temp=$this->firstNode;
+            while($temp->next != null){
+                $temp=$temp->next;
+            }
+            echo "peek data",$temp->data,"\n";
+            return true;
+        }
+    }
+    function isEmpty()
+    {
+        if($this->firstNode==null)
+        return true;
+        else return false;
+    }
+    function show()
+    {
+        $temp=$this->firstNode;
+        while($temp != null){
+            echo $temp->data," ";
+            $temp=$temp->next;
+        }
+        echo "\n\n";
+    }
 }

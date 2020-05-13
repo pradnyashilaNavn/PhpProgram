@@ -13,5 +13,17 @@ fashion.
 * @version : 7.2.14
 * @Since : 07-05-2020
 *********************************************************************/
+include "C:\Users\pc\PHP\DataStructure\BusinessLogic\businesslogic.php";
 echo "Enter expresssion: ";
 $exp=readline();
+$bool=true;
+$obj=new BusinessLogic();
+for($i=0;$i<strlen($exp);$i++){
+    if($exp[$i]=='(')
+        $obj->push($exp[$i]);
+    else if($exp[$i]==')' ){
+        $bool=$obj->pop($exp[$i]);
+        if($bool==false)
+        break;
+    }
+}
