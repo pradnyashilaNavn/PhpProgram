@@ -161,4 +161,31 @@ class BusinessLogic
         return true;
         else return false;
     }
+    public function enqueue($name)
+    {
+        $newNode=new ListNode($name);
+        if($this->firstNode=null)
+        $this->firstNode=&$newNode;
+        else{
+            $temp=$this->firstNode;
+            while($temp!=null){
+                if($temp->next==null){
+                    $temp->next=&$newNode;
+                break;
+                }
+                $temp=$temp->next;
+            }
+        }
+    }
+    public function currentUser()
+    {
+        $temp=$this->firstNode;
+        echo $temp->data,"\n";
+    }
+    public function dequeue()
+    {
+        $this->firstNode=$this->firstNode->next;
+    }
+
+
 }
