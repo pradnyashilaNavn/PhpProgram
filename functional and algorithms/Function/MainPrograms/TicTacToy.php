@@ -39,10 +39,10 @@ for ($i = 0; $i <= 8; $i++) {
         echo "\n";
     }
     echo "\n";
-    if (BusinessLogic::checkUserWinner($game)) {
+    if (BusinessLogic::checkWinner($game, 1)) {
         echo "User win " . "\n";
         break;
-    } else if (BusinessLogic::checkcomputerWinner($game)) {
+    } else if (BusinessLogic::checkWinner($game, 3)) {
         echo "Computer win" . "\n";
         break;
     } else if ($i == 9)

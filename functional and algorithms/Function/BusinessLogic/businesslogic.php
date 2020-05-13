@@ -38,36 +38,30 @@ class BusinessLogic
         echo "total sum " . $count;
     }
 
-    public function checkUserWinner($arr)
+    public function checkWinner($arr, $x)
     {
         if (
-            $arr[0][0] == 1 && $arr[0][1] == 1 && $arr[0][2] == 1 || $arr[1][0] == 1 && $arr[1][1] == 1 && $arr[1][2] == 1
-            || $arr[2][0] == 1 && $arr[2][1] == 1 && $arr[2][2] == 1 || $arr[0][0] == 1 && $arr[1][0] == 1 && $arr[2][0] == 1
-            || $arr[0][1] == 1 && $arr[1][1] == 1 && $arr[2][1] == 1 || $arr[0][2] == 1 && $arr[1][2] == 1 && $arr[2][2] == 1
-            || $arr[0][0] == 1 && $arr[1][1] == 1 && $arr[2][2] == 1  || $arr[0][2] == 1 && $arr[1][1] == 1 && $arr[2][0] == 1
+            $arr[0][0] == $x && $arr[0][1] == $x && $arr[0][2] == $x || $arr[1][0] == $x && $arr[1][1] == $x && $arr[1][2] == $x
+            || $arr[2][0] == $x && $arr[2][1] == $x && $arr[2][2] == $x || $arr[0][0] == $x && $arr[1][0] == $x && $arr[2][0] == $x
+            || $arr[0][1] == $x && $arr[1][1] == $x && $arr[2][1] == $x || $arr[0][2] == $x && $arr[1][2] == $x && $arr[2][2] == $x
+            || $arr[0][0] == $x && $arr[1][1] == $x && $arr[2][2] == $x  || $arr[0][2] == $x && $arr[1][1] == 1 && $arr[2][0] == $x
         )
             return true;
+            else{
+                return false;
+            }
     }
-    public function checkcomputerWinner($arr)
-    {
-        if (
-            $arr[0][0] == 3 && $arr[0][1] == 3 && $arr[0][2] == 3 || $arr[1][0] == 3 && $arr[1][1] == 3 && $arr[1][2] == 3     
-            || $arr[2][0] == 3 && $arr[2][1] == 3 && $arr[2][2] == 3 || $arr[0][0] == 3 && $arr[1][0] == 3 && $arr[2][0] == 3
-            || $arr[0][1] == 3 && $arr[1][1] == 3 && $arr[2][1] == 3 || $arr[0][2] == 3 && $arr[1][2] == 3 && $arr[2][2] == 3
-            || $arr[0][0] == 3 && $arr[1][1] == 3 && $arr[2][2] == 3 || $arr[0][2] == 3 && $arr[1][1] == 3 && $arr[2][0] == 3
-        )
-            return true;
-    }
-
     public function userInput($game)
     {
-        //input x and y position 
+        //input x and y position 2
+
+        echo "User Turn\n";
         echo "turn x" . "\n";
         $x = Utility::getInt();
         echo "turn y" . "\n";
         $y = Utility::getInt();
         //check user input is valid or not
-            if ($x >0 && $x < 4 && $y >0 && $y < 4 && $game[$x - 1][$y - 1] != 0) {
+            if ($x >1 && $x < 4 && $y >1 && $y < 4 && $game[$x - 1][$y - 1] != 0) {
 
             echo "invalid positions pls enter again \n";
             return false;
@@ -86,6 +80,7 @@ class BusinessLogic
         if ($game[$x][$y] != 0) {
             return false;
         } else {
+            echo "Computer turn\n";
             $game[$x][$y] = 3;
             return $game;
         }
