@@ -13,7 +13,19 @@ the Cash Balance.
 * @version : 7.2.14
 * @Since : 11-05-2020
 *********************************************************************/
+include "C:\Users\pc\PHP\DataStructure\MainPrograms\balanceParenthesis.php";
+/*class Node
+{
+    public $data;
+    public $next;
+   public function __construct($data)
+    {
+        $this->data = $data;
+        $this->next = NULL;
+    }    
+}*/
 $object=new BusinessLogic();
+$bool= true;
 echo "echo number of users";
 $user=readline();
 for($i=0;$i<$user;$i++){
@@ -23,8 +35,15 @@ for($i=0;$i<$user;$i++){
 }
 $obj->show();
 for($i=0;$i<$user;$i++){
-     echo "user:  ",$object->currentUser(),"\nenter amount: ";
+     echo "User:  ",$object->currentUser(),"\nenter amount: ";
     $amount=readline();
     echo "enter 1 to deposit\nenter 2 to withdraw:\n";
     $option=readline();
+    $object->dequeue();
+    $object->show();
+    $object->bankBalance($option,$amount);
+}
+$balance=$object->bankBalance;
+echo "bank balance is: ",$balance,"\n";
+
 

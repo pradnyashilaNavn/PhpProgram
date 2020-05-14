@@ -1,10 +1,11 @@
 <?php
+//include "C:\Users\pc\PHP\DataStructure\MainPrograms\bankingCashcounter.php";
 include "C:\Users\pc\PHP\DataStructure\MainPrograms/node.php";
 class BusinessLogic
 {
     public $firstNode;
     public $lastNode;
-    function __construct()
+    public function __construct()
     {
         $this->firstNode = NULL;
         $this->lastNode = NULL;
@@ -161,15 +162,16 @@ class BusinessLogic
         return true;
         else return false;
     }
+
     public function enqueue($name)
     {
         $newNode=new ListNode($name);
-        if($this->firstNode=null)
+        if($this->firstNode=NULL)
         $this->firstNode=&$newNode;
         else{
             $temp=$this->firstNode;
-            while($temp!=null){
-                if($temp->next==null){
+            while($temp!=NULL){
+                if($temp->next==NULL){
                     $temp->next=&$newNode;
                 break;
                 }
@@ -186,6 +188,24 @@ class BusinessLogic
     {
         $this->firstNode=$this->firstNode->next;
     }
+    function bankBalance($option,$amount)
+    {
+        if($option==1)
+            $this->bankBalance += $amount;
+        else
+            $this->bankBalance -= $amount;
+    }
+    public function show()
+    {
+        $temp=$this->firstNode;
+        while($temp != NULL){
+            echo $temp->data," ";
+            $temp=$temp->next;
+        }
+        echo "\n\n";
+    }
+
+
 
 
 }
