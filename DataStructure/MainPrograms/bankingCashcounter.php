@@ -13,17 +13,7 @@ the Cash Balance.
 * @version : 7.2.14
 * @Since : 11-05-2020
 *********************************************************************/
-include "C:\Users\pc\PHP\DataStructure\MainPrograms\balanceParenthesis.php";
-/*class Node
-{
-    public $data;
-    public $next;
-   public function __construct($data)
-    {
-        $this->data = $data;
-        $this->next = NULL;
-    }    
-}*/
+include "C:\Users\pc\PHP\DataStructure\BusinessLogic\businesslogic.php";
 $object=new BusinessLogic();
 $bool= true;
 echo "echo number of users";
@@ -33,7 +23,7 @@ for($i=0;$i<$user;$i++){
     $name=readline();
     $object->enqueue($name);
 }
-$obj->show();
+$object->show();
 for($i=0;$i<$user;$i++){
      echo "User:  ",$object->currentUser(),"\nenter amount: ";
     $amount=readline();

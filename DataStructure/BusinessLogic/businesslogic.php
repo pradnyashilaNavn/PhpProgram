@@ -3,6 +3,7 @@
 include "C:\Users\pc\PHP\DataStructure\MainPrograms/node.php";
 class BusinessLogic
 {
+    public $bankBalance=10000;
     public $firstNode;
     public $lastNode;
     public function __construct()
@@ -206,6 +207,24 @@ class BusinessLogic
     }
 
 
+
+//palindromeChecker
+function addrear($data)
+    {
+        $newNode=new ListNode($data);
+        if($this->firstNode==null)
+            $this->firstNode=&$newNode;
+        else{
+            $temp=$this->firstNode;
+            while($temp != null){
+                if($temp->next==null){
+                    $temp->next=&$newNode;
+                break;
+                }
+                $temp=$temp->next;
+            }
+        }
+    }
 
 
 }
