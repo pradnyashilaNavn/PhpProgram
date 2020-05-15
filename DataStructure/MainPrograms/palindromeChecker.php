@@ -14,8 +14,24 @@ input a string of characters and check whether it is a palindrome.
 *********************************************************************/
 include "C:\Users\pc\PHP\DataStructure\BusinessLogic\businesslogic.php";
 $object=new BusinessLogic();
-echo "enter the string: ";
+echo "enter the string to check for palindrome: ";
 $string=readline();
 for($i=0;$i<strlen($string);$i++){
     $object->addRear($string[$i]);
 }
+$object->displayForward();
+echo "\n";
+$string1 = "";
+echo "reverse of a taken string \n";
+for ($i = 0; $i < strlen($string); $i++) {
+    $string1 = $string1 . $object->removeRear();
+}
+echo $string1 . "\n";
+if ($string == $string1) {
+    echo "String is palindrome \n";
+    echo "true \n";
+} else {
+    echo "String is not palindrome \n";
+    echo "false \n";
+}
+

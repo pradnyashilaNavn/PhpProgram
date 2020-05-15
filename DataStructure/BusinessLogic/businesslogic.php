@@ -204,22 +204,50 @@ class BusinessLogic
         }
         echo "\n\n";
     }
-    
+
     //palindromeChecker
     function addrear($data)
     {
-        $newNode = new ListNode($data);
-        if ($this->firstNode == null)
-            $this->firstNode = &$newNode;
-        else {
-            $temp = $this->firstNode;
-            while ($temp != null) {
-                if ($temp->next == null) {
-                    $temp->next = &$newNode;
-                    break;
-                }
-                $temp = $temp->next;
-            }
+        $newNode = new ListNode($data); 
+        if ($this->isEmpty()) {
+            $this->lastNode = $newNode;
+        } else {
+            $this->firstNode->prev = $newNode;
+        }
+        $newNode->next = $this->firstNode;
+        $this->firstNode = $newNode;
+    }
+    public function displayForward()
+    {
+        $temp = $this->firstNode;
+        if ($temp == null) {
+            echo "underflow \n";
+        }
+        while ($temp != null) {
+            echo $temp->data . " ";
+            $temp = $temp->next;
         }
     }
+    public function displayReverse()
+    {
+        $temp = $this->lastNode;
+        while ($temp != null) {
+            echo $temp->data . " ";
+            $temp = $temp->prev;
+        }
+    }
+    public function removeRear()
+    {
+        $temp = $this->lastNode;
+        if ($this->firstNode == $this->lastNode) {
+            $this->firstNode = null;
+        } else if($this->lastNode->prev= null) {
+            $this->lastNode->prev->next = null;
+        }
+        $val = $this->lastNode->data;
+        $this->tail = $this->lastNode->prev;
+        $temp->prev = null;
+        return $val;
+    }
+      
 }
