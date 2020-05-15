@@ -23,7 +23,7 @@ while($month > 12 || $month < 1){
 echo "Enter year\n";
 $year = Utility::getInt(); 
 
- function Cal($month,$year)
+ function Calender($month,$year)
     {
         $monthArray = array(31,28,31,30,31,30,31,31,30,31,30,31);
         if (Utility::leapYear($year)) {
@@ -49,4 +49,14 @@ $year = Utility::getInt();
         }
         return $priArray;
     }
+    function printCalender($priArr)
+    {
+        for ($i=0; $i < 7; $i++) { 
+            for ($j=0; $j < 7; $j++) { 
+                echo $priArr[$i][$j];
+            }
+            echo "\n";
+        }
+    }
+    printCalender(Calender($month,$year));  
 ?>
