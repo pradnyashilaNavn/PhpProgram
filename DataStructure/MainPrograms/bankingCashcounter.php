@@ -13,7 +13,7 @@ the Cash Balance.
 * @version : 7.2.14
 * @Since : 11-05-2020
 *********************************************************************/
-include "C:\Users\pc\PHP\DataStructure\BusinessLogic\businesslogic.php";
+include "C:/Users/pc/PHP/DataStructure/BusinessLogic/businesslogic.php";
 $object=new BusinessLogic();
 $bool= true;
 echo "echo number of users";
@@ -25,7 +25,7 @@ for($i=0;$i<$user;$i++){
 }
 $object->show();
 for($i=0;$i<$user;$i++){
-     echo "User:  ",$object->currentUser(),"\nenter amount: ";
+    echo "User:  ",$object->currentUser(),"\nenter amount: ";
     $amount=readline();
     echo "enter 1 to deposit\nenter 2 to withdraw:\n";
     $option=readline();

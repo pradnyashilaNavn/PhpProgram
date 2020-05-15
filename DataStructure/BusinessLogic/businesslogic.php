@@ -1,12 +1,12 @@
 <?php
 //include "C:\Users\pc\PHP\DataStructure\MainPrograms\bankingCashcounter.php";
-include "C:\Users\pc\PHP\DataStructure\MainPrograms/node.php";
+include "C:/Users/pc/PHP/DataStructure/MainPrograms/node.php";
 class BusinessLogic
 {
-    public $bankBalance=10000;
+    public $bankBalance = 10000;
     public $firstNode;
     public $lastNode;
-    public function __construct()
+   public function __construct()
     {
         $this->firstNode = NULL;
         $this->lastNode = NULL;
@@ -95,136 +95,131 @@ class BusinessLogic
     */
     function push($data)
     {
-        $newNode = new ListNode($data); 
-        if($this->firstNode==null)
-            $this->firstNode=&$newNode;
-        else{
-            $temp=$this->firstNode;
-            while($temp != null){
-                if($temp->next==null){
-                    $temp->next=&$newNode;
-                break;
+        $newNode = new ListNode($data);
+        if ($this->firstNode == null)
+            $this->firstNode = &$newNode;
+        else {
+            $temp = $this->firstNode;
+            while ($temp != null) {
+                if ($temp->next == null) {
+                    $temp->next = &$newNode;
+                    break;
                 }
-                $temp=$temp->next;
+                $temp = $temp->next;
             }
-        }   
+        }
     }
 
     /*
     *@description : poping the data which is last in the linked list
     *@parameter : parameter is data 
-    */ 
+    */
     function pop($data)
     {
-        if(BusinessLogic::isEmpty() == false){
-            $temp=$this->firstNode;
-            $temp2=$temp;
-            if($temp->next==null){
-                $this->firstNode=null;
-            }
-            else{    
-                while($temp->next != null){
-                    $temp2=$temp;
-                    $temp=$temp->next;
+        if (BusinessLogic::isEmpty() == false) {
+            $temp = $this->firstNode;
+            $temp2 = $temp;
+            if ($temp->next == null) {
+                $this->firstNode = null;
+            } else {
+                while ($temp->next != null) {
+                    $temp2 = $temp;
+                    $temp = $temp->next;
                 }
-                if($temp->data == '(' && $data == ')'){
-                    $temp2->next=null;
+                if ($temp->data == '(' && $data == ')') {
+                    $temp2->next = null;
                 }
             }
             return true;
-        }
-    else return false;
+        } else return false;
     }
     /*
     *@description : displays the peek of the data in stack 
-    */ 
+    */
     function peek()
     {
-        if($this->firstNode==null){
-        return false;
-        }
-        else{
-            $temp=$this->firstNode;
-            while($temp->next != null){
-                $temp=$temp->next;
+        if ($this->firstNode == null) {
+            return false;
+        } else {
+            $temp = $this->firstNode;
+            while ($temp->next != null) {
+                $temp = $temp->next;
             }
-            echo "peek data",$temp->data,"\n";
+            echo "peek data", $temp->data, "\n";
             return true;
         }
     }
 
-     /*
+    /*
     *@description : checks the stack is empty oir not
     *@return : returns the boolean 
-    */ 
+    */
     function isEmpty()
     {
-        if($this->firstNode==null)
-        return true;
+        if ($this->firstNode == null)
+            return true;
         else return false;
     }
 
+// bankcashcounter
+
     public function enqueue($name)
     {
-        $newNode=new ListNode($name);
-        if($this->firstNode=NULL)
-        $this->firstNode=&$newNode;
-        else{
-            $temp=$this->firstNode;
-            while($temp!=NULL){
-                if($temp->next==NULL){
-                    $temp->next=&$newNode;
-                break;
+        $newNode = new ListNode($name);
+        if ($this->firstNode == NULL)
+            $this->firstNode =&$newNode;
+        else {
+            $temp = $this->firstNode;
+            while ($temp != NULL) {
+                if ($temp->next ==NULL) {
+                    $temp->next = &$newNode;
+                    break;
                 }
-                $temp=$temp->next;
+                $temp =$temp->next;
             }
         }
     }
     public function currentUser()
     {
-        $temp=$this->firstNode;
-        echo $temp->data,"\n";
+        $temp = $this->firstNode;
+        echo $temp->data, "\n";
     }
-    public function dequeue()
-    {
-        $this->firstNode=$this->firstNode->next;
+     public function dequeue()
+    {    
+        $this->firstNode = $this->firstNode->next;
     }
-    function bankBalance($option,$amount)
+     public function bankBalance($option, $amount)
     {
-        if($option==1)
+        if ($option == 1)
             $this->bankBalance += $amount;
         else
             $this->bankBalance -= $amount;
     }
     public function show()
     {
-        $temp=$this->firstNode;
-        while($temp != NULL){
-            echo $temp->data," ";
-            $temp=$temp->next;
+        $temp = $this->firstNode;
+        while ($temp != NULL) {
+            echo "$temp->data", " ";
+            $temp = $temp->next;
         }
         echo "\n\n";
     }
-
-
-
-//palindromeChecker
-function addrear($data)
+    
+    //palindromeChecker
+    function addrear($data)
     {
-        $newNode=new ListNode($data);
-        if($this->firstNode==null)
-            $this->firstNode=&$newNode;
-        else{
-            $temp=$this->firstNode;
-            while($temp != null){
-                if($temp->next==null){
-                    $temp->next=&$newNode;
-                break;
+        $newNode = new ListNode($data);
+        if ($this->firstNode == null)
+            $this->firstNode = &$newNode;
+        else {
+            $temp = $this->firstNode;
+            while ($temp != null) {
+                if ($temp->next == null) {
+                    $temp->next = &$newNode;
+                    break;
                 }
-                $temp=$temp->next;
+                $temp = $temp->next;
             }
         }
     }
-
-
 }
