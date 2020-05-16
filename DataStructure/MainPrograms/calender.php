@@ -13,24 +13,25 @@ of the week.
 * @version : 7.2.14
 * @Since : 11-05-2020
 *********************************************************************/
-include "C:\Users\pc\PHP\DataStructure\Utility\Utility.php"; 
+include "C:/Users/pc/PHP/DataStructure/BusinessLogic/businesslogic.php";
+$object=new BusinessLogic();
 echo "Enter month\n";
-$month = Utility::getInt();
+$month = BusinessLogic::getInt();
 while($month > 12 || $month < 1){
     echo "Enter value 1 to 12\n";
-    $month = Utility::getInt();
+    $month = BusinessLogic::getInt();
 }
 echo "Enter year\n";
-$year = Utility::getInt(); 
+$year = BusinessLogic::getInt(); 
 
- function Calender($month,$year)
+ function calender($month,$year)
     {
         $monthArray = array(31,28,31,30,31,30,31,31,30,31,30,31);
-        if (Utility::leapYear($year)) {
+        if (BusinessLogic::leapYear($year)) {
             $monthArray[1] = 29;
         }
         $priArray = array(array(" s "," m "," t "," w "," th"," f "," s "));
-        $firstDay = Utility::printDay(1,$month,$year);
+        $firstDay = BusinessLogic::printDay(1,$month,$year);
         $j = $firstDay; 
         $date = 1;
         for ($i=1; $i < 7; $i++) { 

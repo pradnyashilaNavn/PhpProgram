@@ -1,8 +1,46 @@
 <?php
-//include "C:\Users\pc\PHP\DataStructure\MainPrograms\bankingCashcounter.php";
 include "C:/Users/pc/PHP/DataStructure/MainPrograms/node.php";
 class BusinessLogic
 {
+    public function getInt(){
+    try{
+        fscanf(STDIN, "%s\n", $n);
+        //The is_numeric() function checks whether a variable is a number or a numeric string.
+        if(!is_numeric($n)){
+            throw new Exception("Enter numeric value only");
+        }else{
+            return $n;
+        }
+    }catch (Exception $e){
+        echo "Exception :". $e->getMessage(). "\n" . "on line" . $e->getLine(). "\n";
+        }
+}
+public function printDay($d,$m,$y)
+{   
+    $y0 = $y - (int)((14 - $m) / 12);
+    $x = $y0 + (int)($y0/4) - (int)($y0/100) + (int)($y0/400);
+    $m0 = $m + 12 * (int)((14 - $m) / 12) - 2;
+    $d0 = ($d + $x + (int)((31*$m0) / 12)) % 7;
+    return $d0;
+}
+public function leapYear($yr)
+{
+     if (strlen((string)$yr)==4) 
+     {  
+         if ((($yr % 4 == 0) && ($yr % 100 != 0)) || ($yr % 400 == 0)) 
+         {
+         echo "leap year"."\n";
+         } 
+         else 
+         {
+             echo "not leap year"."\n";
+         }   
+     }  
+     else
+     {
+         echo "invalid input"."\n";
+     }                                
+}
     public $bankBalance = 10000;
     public $firstNode;
     public $lastNode;
@@ -241,13 +279,12 @@ class BusinessLogic
         $temp = $this->lastNode;
         if ($this->firstNode == $this->lastNode) {
             $this->firstNode = null;
-        } else if($this->lastNode->prev= null) {
+        } else {
             $this->lastNode->prev->next = null;
         }
         $val = $this->lastNode->data;
-        $this->tail = $this->lastNode->prev;
+        $this->lastNode = $this->lastNode->prev;
         $temp->prev = null;
         return $val;
-    }
-      
+    } 
 }
