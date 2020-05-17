@@ -14,6 +14,11 @@ class BusinessLogic
         echo "Exception :". $e->getMessage(). "\n" . "on line" . $e->getLine(). "\n";
         }
 }
+        /**
+         * @description: function to print prime number between 0 to 1000
+         * @return: array $arr array of prime number 0 to 1000
+         */
+
 public function primeNumber()
 {
     $arr = array();
@@ -26,11 +31,47 @@ public function primeNumber()
                 break;
         }
         if ($boolean == true)
-            $arr[$index++] =  $i;
+            $arr[$index++] =(string)$i;
            // echo $i."\n";
     }
     return $arr;
 }
+        /**
+         *@description: funtion anagram is to check all the element of string are same or not
+         *@param: string $input1 is or word
+         *@param: string $input2 is other word to check anagram
+         *@return: boolean true of flase
+         */
+
+public function anagram($input1,$input2)
+ {
+     //convert both string into array
+     $arr1 = str_split($input1,1);
+     $arr2 = str_split($input2,1);
+     
+     //for anagram size of both string should equal
+     if(sizeof($arr1) == sizeof($arr2))
+     {
+         //forEach to access the value of $ar1 one by one
+         foreach($arr1 as $value)
+         {
+             //check the value in other array and save index
+             $index = array_search($value,$arr2);
+             //if value is present then it will remove that value from 2nd array
+             if($index !== false)
+                 unset($arr2[$index]);            
+         }
+         //after foreach if size is zero then word is anagra else not anagram
+         if (sizeof($arr2) == 0) 
+             return true;
+         else 
+             return false;
+     }
+     else
+         return false;
+     
+ }
+
 public function printDay($d,$m,$y)
 {   
     $y0 = $y - (int)((14 - $m) / 12);
