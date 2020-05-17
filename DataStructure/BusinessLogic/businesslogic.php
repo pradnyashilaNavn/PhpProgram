@@ -6,14 +6,30 @@ class BusinessLogic
     try{
         fscanf(STDIN, "%s\n", $n);
         //The is_numeric() function checks whether a variable is a number or a numeric string.
-        if(!is_numeric($n)){
+        if(!is_numeric($n))
             throw new Exception("Enter numeric value only");
-        }else{
+        else
             return $n;
-        }
     }catch (Exception $e){
         echo "Exception :". $e->getMessage(). "\n" . "on line" . $e->getLine(). "\n";
         }
+}
+public function primeNumber()
+{
+    $arr = array();
+    $index = 0;
+    for ($i = 2; $i < 1000; $i++) {
+        $boolean = true;
+        for ($j = 2; $j <= $i / 2; $j++) {
+            if ($i % $j == 0) 
+                $boolean = false;
+                break;
+        }
+        if ($boolean == true)
+            $arr[$index++] =  $i;
+           // echo $i."\n";
+    }
+    return $arr;
 }
 public function printDay($d,$m,$y)
 {   
