@@ -13,33 +13,42 @@ implemented using Linked List.
 * @Since : 11-05-2020
 *********************************************************************/
 include "C:/Users/pc/PHP/DataStructure/BusinessLogic/businesslogic.php";
+//include "C:/Users/pc/PHP/DataStructure/Utility/Utility.php"; 
 $object=new BusinessLogic();
 echo "Enter the month: ";
-$month=BusinessLogic::getInt();
-if (($month <= 0) && ($month > 12)) {
-    echo "Enter valid month number \n";
-    $month = BusinessLogic::getInt();
-}
-$year = BusinessLogic::getInt();
-if ($year < 1000) {
-    echo "Enter valid year \n";
-    $year = BusinessLogic::getInt();
-}
-BusinessLogic::printDay($date, $month, $year);
-$calender = array();
+$month=readline();
+$date=1;
+echo "Enter the year: ";
+$year = readline();
+$firstday=BusinessLogic::printDay(1, $month, $year);
 $days = array('31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31');
 $months = array('Jan', 'Feb', 'March', 'April', 'may', 'June', 'July', 'Aug', 'Sep', 'oct', 'Nov', 'Dec');
 $week = array('Sun', 'Mon', 'Tue', 'Wed', 'Th', 'Fri', 'Sat');
+echo $firstday . "\n";
 if (BusinessLogic::leapYear($year)) {
     $days[1] = 29;
 }
 for ($i = 1; $i <= $days[$month - 1]; $i++) {
-    $object->enqueue($i);
+   $object->enqueue($i);
+//   echo $i," ";
 }
-echo  $months[$m - 1] . "\t" . $year;
-echo "\n";
-for ($j = 0; $j < strlen($week); $j++) {
+echo  $months[$month - 1] . "\t" . $year,"\n";
+for ($j = 0; $j < sizeof($week); $j++) {
     echo $week[$j] . "\t";
 }
+$count=0;
+echo "\n";
+for ($k = 0; $k < $firstday; $k++)
+ {
+     $count++;
+     echo "          ";
+ }
 
-
+ echo "\n";
+ for ($i = 1; $i <= $days[$month - 1]; $i++) {
+  // echo $object->peek()."\t";
+    $count++;
+    echo $object->dequeuecal()."\t";
+    if($count%7==0)
+    echo "\n";
+ }

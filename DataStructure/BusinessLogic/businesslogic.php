@@ -28,19 +28,14 @@ public function leapYear($yr)
      if (strlen((string)$yr)==4) 
      {  
          if ((($yr % 4 == 0) && ($yr % 100 != 0)) || ($yr % 400 == 0)) 
-         {
          echo "leap year"."\n";
-         } 
          else 
-         {
-             echo "not leap year"."\n";
-         }   
+             echo "not leap year"."\n";  
      }  
      else
-     {
-         echo "invalid input"."\n";
-     }                                
+         echo "invalid input"."\n";                              
 }
+
     public $bankBalance = 10000;
     public $firstNode;
     public $lastNode;
@@ -174,12 +169,13 @@ public function leapYear($yr)
     /*
     *@description : displays the peek of the data in stack 
     */
-    function peek()
+    public function peek()
     {
         if ($this->firstNode == null) {
             return false;
         } else {
             $temp = $this->firstNode;
+            //echo  $temp->data;
             while ($temp->next != null) {
                 $temp = $temp->next;
             }
@@ -287,4 +283,18 @@ public function leapYear($yr)
         $temp->prev = null;
         return $val;
     } 
+    public function dequeuecal()
+    {
+        if (!$this->isEmpty()) {
+            $value = $this->firstNode->data;
+            $this->firstNode = $this->firstNode->next;
+        } else {
+            echo "underflow\n";
+        }
+        if ($this->firstNode == null) {
+            $lastNode = null;
+        }
+        return $value;
+    }
+    
 }
