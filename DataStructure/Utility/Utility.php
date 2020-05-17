@@ -11,7 +11,7 @@ class Utility
     }
     public static function readWords()
     {
-        $file = "C:/Users/pc/PHP/DataStructure/files.txt";
+        $file = "C:/Users/pc/PHP/DataStructure/files/files.txt";
         $open = fopen($file, "r") or die("can't open the file");
         $word = fread($open, filesize($file));
         fclose($open);
@@ -64,7 +64,7 @@ class Utility
         }
         if ($bool) {
             Utility::insert($data);
-            $open = fopen("C:/Users/pc/PHP/DataStructure/files.txt", "a") or die("can't open the file");
+            $open = fopen("C:/Users/pc/PHP/DataStructure/files/files.txt", "a") or die("can't open the file");
             fwrite($open, $data . "  ");
             echo "$data added\n";
         }

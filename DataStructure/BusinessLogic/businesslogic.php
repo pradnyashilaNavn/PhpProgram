@@ -46,7 +46,7 @@ public function leapYear($yr)
     }
     public static function readNumbers()
     {
-        $file = "C:\Users\pc\PHP\DataStructure/number.txt";
+        $file = "C:/Users/pc/PHP/DataStructure/files/number.txt";
         $open = fopen($file, "r") or die("can't open the file");
         $word = fread($open, filesize($file));
         fclose($open);
@@ -107,7 +107,7 @@ public function leapYear($yr)
             }
             if ($bool) {
                 BusinessLogic::insert($data);
-                $open = fopen("C:\Users\pc\PHP\DataStructure/number.txt", "a") or die("can't open the file");
+                $open = fopen("C:/Users/pc/PHP/DataStructure/files/number.txt", "a") or die("can't open the file");
                 fwrite($open, $data . "  ");
                 echo "$data added\n";
             }
