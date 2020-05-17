@@ -183,7 +183,7 @@ public function leapYear($yr)
     *@description : creating a new node and linking to next Linked List using stack pushing 
      @return : Arithmetic Expression is balanced or not.
     */
-    function push($data)
+  public function push($data)
     {
         $newNode = new ListNode($data);
         if ($this->firstNode == null)
@@ -204,7 +204,7 @@ public function leapYear($yr)
     *@description : poping the data which is last in the linked list
     *@parameter : parameter is data 
     */
-    function pop($data)
+   public function pop($data)
     {
         if (BusinessLogic::isEmpty() == false) {
             $temp = $this->firstNode;
