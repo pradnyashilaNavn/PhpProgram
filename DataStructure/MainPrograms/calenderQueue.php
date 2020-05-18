@@ -30,7 +30,6 @@ if (BusinessLogic::leapYear($year)) {
 }
 for ($i = 1; $i <= $days[$month - 1]; $i++) {
    $object->enqueue($i);
-//   echo $i," ";
 }
 echo  $months[$month - 1] . "\t" . $year,"\n";
 for ($j = 0; $j < sizeof($week); $j++) {
@@ -41,10 +40,10 @@ echo "\n";
 for ($k = 0; $k < $firstday; $k++)
  {
      $count++;
-     echo "          ";
+   echo "        ";
+
  }
 
- echo "\n";
  for ($i = 1; $i <= $days[$month - 1]; $i++) {
   // echo $object->peek()."\t";
     $count++;
