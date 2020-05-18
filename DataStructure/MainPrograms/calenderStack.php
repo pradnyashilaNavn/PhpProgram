@@ -12,17 +12,36 @@ implemented using Linked List.
 * @version : 7.2.14
 * @Since : 11-05-2020
 *********************************************************************/
-include "C:/Users/pc/PHP/DataStructure/BusinessLogic/businesslogic.php";
-$object=new BusinessLogic();
+//include "C:/Users/pc/PHP/DataStructure/BusinessLogic/businesslogic.php";
+include "C:\Users\pc\PHP\DataStructure\MainPrograms\stack.php";
+$object=new Stack();
+$obj=new Stack();
 echo "Enter the month: ";
 $month=readline();
 echo "Enter the year: ";
 $year = readline();
-$firstday=BusinessLogic::printDay(1, $month, $year);
+//$firstday=BusinessLogic::printDay(1, $month, $year);
 $days = array('31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31');
 $months = array('Jan', 'Feb', 'March', 'April', 'may', 'June', 'July', 'Aug', 'Sep', 'oct', 'Nov', 'Dec');
 $week = array('Sun', 'Mon', 'Tue', 'Wed', 'Th', 'Fri', 'Sat');
-echo $firstday . "\n";
-if (BusinessLogic::leapYear($year)) {
-    $days[1] = 29;
+// echo $firstday . "\n";
+// if (BusinessLogic::leapYear($year)) {
+//     $days[1] = 29;
+// }
+echo  $months[$month - 1] . "\t" . $year,"\n";
+for ($j = 0; $j < sizeof($week); $j++) {
+    echo $week[$j] . "\t";
+}
+echo "\n";
+$count=0;
+for ($i = 1; $i <= $days[$month - 1]; $i++) { 
+   echo $object->push($i);
+     echo $i," ";
+}
+echo "\n";
+for ($i = 1; $i <= $days[$month - 1]; $i++) {
+   $count++;
+   echo $obj->pop($i)."\t";
+   if($count%7==0)
+   echo "\n";
 }
