@@ -23,17 +23,17 @@ public function primeNumber()
 {
     $arr = array();
     $index = 0;
-    for ($i = 2; $i < 1000; $i++) {
-        $boolean = true;
-        for ($j = 2; $j <= $i / 2; $j++) {
-            if ($i % $j == 0) 
-                $boolean = false;
-                break;
+    for ($i = 2; $i <=1000; $i++) {
+        $c=0;
+        for ($j = 1; $j <= $i ; $j++) {
+            if ($i % $j == 0) {
+                $c++;
+                }
         }
-        if ($boolean == true)
-            $arr[$index++] =(string)$i;
-           // echo $i."\n";
+        if ($c==2){
+          $arr[$index++] =$i;
     }
+}
     return $arr;
 }
         /**
@@ -43,33 +43,26 @@ public function primeNumber()
          *@return: boolean true of flase
          */
 
-public function anagram($input1,$input2)
+public function anagram($array)
  {
-     //convert both string into array
-     $arr1 = str_split($input1,1);
-     $arr2 = str_split($input2,1);
-     
-     //for anagram size of both string should equal
-     if(sizeof($arr1) == sizeof($arr2))
-     {
-         //forEach to access the value of $ar1 one by one
-         foreach($arr1 as $value)
-         {
-             //check the value in other array and save index
-             $index = array_search($value,$arr2);
-             //if value is present then it will remove that value from 2nd array
-             if($index !== false)
-                 unset($arr2[$index]);            
-         }
-         //after foreach if size is zero then word is anagra else not anagram
-         if (sizeof($arr2) == 0) 
-             return true;
-         else 
-             return false;
-     }
-     else
-         return false;
-     
+    $c = 0;
+    $primePal = array();
+    for ($i = 0; $i < count($array); $i++) {
+        $temp = $array[$i];
+        $finValue = 0;
+        while (floor($temp != 0)) {
+            $t = floor($temp % 10);
+            $temp = floor($temp / 10);
+            $finValue = $finValue * 10 + $t;
+        }
+        for ($j = 0; $j < count($array); $j++) {
+            if ($finValue == $array[$j] && $finValue > 11) {
+                $primePal[$c] = $array[$i];
+                echo $array[$i],"  ";
+                $c++;
+            }
+        }
+    }
  }
 
 public function printDay($d,$m,$y)
