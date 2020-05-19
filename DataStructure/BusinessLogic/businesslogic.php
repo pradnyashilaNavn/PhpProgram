@@ -103,6 +103,15 @@ public function leapYear($yr)
      else
          echo "invalid input"."\n";                              
 }
+public static function HashNumber()
+{
+    $file = "C:/Users/pc/PHP/DataStructure/files/hashNumber.txt";
+    $open = fopen($file, "r") or die("Unable to open file");
+    $word = fread($open, filesize($file));
+    fclose($open);
+    return $word;
+}
+
 
     public $bankBalance = 10000;
     public $firstNode;
