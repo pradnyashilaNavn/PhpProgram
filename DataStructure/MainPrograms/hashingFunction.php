@@ -17,3 +17,25 @@ $object=new BusinessLogic();
 $words=BusinessLogic::hashNumber();
 $array=explode(" ",$words);
 echo implode(" ",$array),"\n";
+$obj[10]=new LinkedList();
+for($i=0;$i<count($obj);$i++){
+    $obj[$i]=null;
+}
+for($i=0;$i<count($obj);$i++){
+    $obj[$i]=new LinkedList();
+}
+for($i=0;$i<count($array);$i++){
+    $remainder=$array[$i]%11;
+    echo floatval ($remainder);
+    $obj[$remainder]->add($array[$i]);
+}
+for($i=0;$i<count($obj);$i++){
+    echo "[$i]->";
+    $obj[$i]->display();
+    echo "\n\n";
+}
+$object=new LinkedList();
+echo "enter to search number: ";
+$search=readline();
+$value=$search%11;
+$obj[$value]->search($search);

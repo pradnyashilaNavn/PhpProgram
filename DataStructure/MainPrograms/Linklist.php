@@ -12,9 +12,6 @@ class Node
 class LinkedList
 {
     public $firstNode;
-    /*
-     * function to add the data of Linked list
-     */
     public function add($data)
     {
         $newNode=new Node($data);
@@ -36,17 +33,10 @@ class LinkedList
         }
     }
 
-    /*
-     * function to check if the list is empty or not
-     */
     public function isEmpty()
     {
         return $this->firstNode == null;
     } 
-
-    /*
-     * function to remove the data given as argument removes only if data is there
-     */
     public function delete($data)
     {
         $temp=$this->firstNode;
