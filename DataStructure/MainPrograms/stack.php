@@ -21,6 +21,7 @@ class Stack{
     }
     public function push($data)
     {
+         echo $data,"\t";
         $newNode = new Node($data);
         if ($this->firstNode == null)
             $this->firstNode = &$newNode;
@@ -38,13 +39,13 @@ class Stack{
 
     public function pop($data)
     {
+       
         $temp=$this->firstNode;
         if($this->firstNode == null )
         {
             return;
         }
         else if($temp->next == null){
-            echo $temp->data," ";
             $this->firstNode=null;
         }
         else{    
