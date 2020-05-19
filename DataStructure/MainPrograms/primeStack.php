@@ -1,11 +1,11 @@
 <?php
 /********************************************************************
-* @Execution : Algorithm/MainPrograms $ php primeAnagram.php
-* @Description :Take a range of 0-1000 Numbers and find the Prime numbers in that range. Store
-the prime numbers in a 2D Array, the first dimension represents the range 100, 200, and so on.
-* @Purpose : Check the number which are prime and anagram.
+* @Execution : Algorithm/MainPrograms $ php primeStack.php
+* @Description :Add the Prime Numbers that are Anagram in the Range of 0 1000
+in a Stack using the Linked List.
+* @Purpose : Print the Anagrams in the Reverse Order.
 * @Function : Utility/utility
-* @File : primeAnagram.php
+* @File : primeStack.php
 * @Author : Pradnyashila Jadhav 
 * <pradnyajadhav995@gmail.com>
 * @version : 7.2.14
