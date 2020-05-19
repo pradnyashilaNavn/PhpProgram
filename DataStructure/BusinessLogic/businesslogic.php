@@ -64,6 +64,24 @@ public function anagram($array)
         }
     }
  }
+ public function prime()
+{
+    $array = array();
+    $index = 0;
+    for ($i = 2; $i <=1000; $i++) {
+        $c=0;
+        for ($j = 1; $j <= $i ; $j++) {
+            if ($i % $j == 0) {
+                $c++;
+                }
+        }
+        if ($c==2){
+          $array[$index++] =$i;
+    }
+}
+    return $array;
+}
+
 
 public function printDay($d,$m,$y)
 {   
@@ -346,5 +364,25 @@ public function leapYear($yr)
         }
         return $value;
     }
+    public function popstack()
+    {
+        $temp=$this->firstNode;
+        $temp2=$temp;
+        if($this->firstNode == null )
+        {
+            return;
+        }
+        else if($temp->next == null){
+            echo $temp->data," ";
+            $this->firstNode=null;
+        }
+        else{    
+            while($temp->next != null){
+                $temp2=$temp;
+                $temp2=$temp->next;
+            }
+        }
+    }
+    
     
 }
